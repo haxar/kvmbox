@@ -4,6 +4,10 @@
 
 #ifndef KVMBOX_H
 #define KVMBOX_H
+
+#include <sys/ioctl.h>
+#include <linux/kvm.h>
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -17,10 +21,8 @@ struct kvm {
 	void *rom;
 };
 
-int vcpu_run(struct kvm *kvm);
-struct kvm *vm_init(int argc, char *argv[]);
-
 #ifdef __cplusplus
 }
 #endif
 #endif
+
